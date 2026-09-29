@@ -6,19 +6,19 @@
 #
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Fix Clipboard as Command
+# @raycast.title Fix Clipboard
 # @raycast.mode silent
 #
 # Optional parameters:
-# @raycast.icon ⌨️
+# @raycast.icon 📋
 # @raycast.packageName clipfix
-# @raycast.description Same as Fix Clipboard, and fold backslash continuations into one runnable line.
+# @raycast.description Strip the glyph, gutter and line breaks a terminal agent added to the copied text.
 # @raycast.author dave
 
 export PATH="$HOME/.local/share/mise/shims:$HOME/.local/bin:/opt/homebrew/bin:/usr/bin:/bin"
 
-CLIPFIX="$(cd "$(dirname "$0")/.." && pwd)/bin/clipfix.mjs"
+CLIPFIX="$(cd "$(dirname "$0")" && pwd)/clipfix/bin/clipfix.mjs"
 [ -x "$CLIPFIX" ] || { echo "clipfix not found - is the volume mounted?"; exit 1; }
 
-summary=$(node "$CLIPFIX" --clipboard --cmd "$@" 2>&1 >/dev/null) || { echo "$summary"; exit 1; }
+summary=$(node "$CLIPFIX" --clipboard "$@" 2>&1 >/dev/null) || { echo "$summary"; exit 1; }
 echo "${summary#clipfix: }"

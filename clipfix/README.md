@@ -31,11 +31,12 @@ No dependencies. The symlink points into this directory, so `clipfix` needs the
 
 ### Hotkey
 
-`raycast/` holds two Raycast script commands. This tool lives in the
-`woda-script-commands` repo, so they show up once that repo is added in
-**Raycast → Extensions → Script Commands → Add Script Directory**. Give each
-command a hotkey. `⌥⇧V` works well for the first one: next to `⌘V`, hard to hit by
-accident.
+The two Raycast script commands, `fix-clipboard.sh` and
+`fix-clipboard-as-command.sh`, sit at the top level of the
+`woda-script-commands` repo, next to this folder. Raycast does not scan
+subfolders, so they must stay there. Add the repo in **Raycast → Extensions →
+Script Commands → Add Script Directory** and give each command a hotkey.
+`⌥⇧V` works well for the first one: next to `⌘V`, hard to hit by accident.
 
 - **Fix Clipboard** - repair whatever was copied.
 - **Fix Clipboard as Command** - the same, and fold `\` continuations into one
