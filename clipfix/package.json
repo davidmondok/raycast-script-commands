@@ -1,0 +1,14 @@
+{
+  "name": "clipfix",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Make text copied out of a terminal agent pasteable again: strip the glyph and gutter, re-join the lines the renderer broke.",
+  "type": "module",
+  "bin": {
+    "clipfix": "./bin/clipfix.mjs"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.mjs\""
+  },
+  "license": "UNLICENSED"
+}
